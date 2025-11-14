@@ -1,0 +1,23 @@
+{
+  "name": "Claude HA Agent",
+  "version": "1.0.0",
+  "slug": "claude-ha-agent",
+  "description": "AI-powered conversational Home Assistant management",
+  "image": "ghcr.io/your-org/claude-ha-agent:{arch}",
+  "arch": ["amd64", "armv7", "aarch64"],
+  "ports": {
+    "5000/tcp": 5000
+  },
+  "options": {
+    "claude_api_key": "string (required)",
+    "alert_threshold_usd": "number (optional, default 5.0)"
+  },
+  "schema": {
+    "claude_api_key": "str",
+    "alert_threshold_usd": "float?"
+  },
+  "startup": "services",
+  "boot": "auto",
+  "hassio_role": "default",
+  "homeassistant_minimum_version": "2024.1.0"
+}
