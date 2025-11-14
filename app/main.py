@@ -70,8 +70,22 @@ async def lifespan(app: FastAPI):
         # Initialize conversation service
         conversation_service = ConversationService(database)
 
+        # Initialize domain-specific services
+        entity_service = EntityService(ha_client)
+        integration_service = IntegrationService(ha_client)
+        automation_service = AutomationService(ha_client)
+        analysis_service = AnalysisService(ha_client)
+
         # Initialize tool executor
         tool_executor = ToolExecutor()
+
+        # Register all tools
+        entity_tools.register_entity_tools(tool_executor, entity_service)
+        integration_tools.register_integration_tools(tool_executor, integration_service)
+        automation_tools.register_automation_tools(tool_executor, automation_service)
+        analysis_tools.register_analysis_tools(tool_executor, analysis_service)
+
+        logger.info("All tools registered successfully")
 
         # Store services globally for API routes
         _services = {
@@ -79,6 +93,10 @@ async def lifespan(app: FastAPI):
             "ha_client": ha_client,
             "claude_service": claude_service,
             "conversation_service": conversation_service,
+            "entity_service": entity_service,
+            "integration_service": integration_service,
+            "automation_service": automation_service,
+            "analysis_service": analysis_service,
             "tool_executor": tool_executor,
         }
 
