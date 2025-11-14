@@ -11,7 +11,12 @@ from app.db.database import Database
 from app.services.ha_client import HAClient
 from app.services.claude_service import ClaudeService
 from app.services.conversation_service import ConversationService
+from app.services.entity_service import EntityService
+from app.services.integration_service import IntegrationService
+from app.services.automation_service import AutomationService
+from app.services.analysis_service import AnalysisService
 from app.tools.tool_executor import ToolExecutor
+from app.tools import entity_tools, integration_tools, automation_tools, analysis_tools
 from app.api import routes
 
 # Configure logging
