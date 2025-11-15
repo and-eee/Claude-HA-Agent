@@ -1,19 +1,7 @@
-{
-  "repositories": [
-    {
-      "name": "Claude HA Agent",
-      "url": "https://github.com/and-eee/Claude-HA-Agent",
-      "maintainer": "and-eee",
-      "addons": [
-        {
-          "name": "Claude HA Agent",
-          "description": "AI-powered conversational Home Assistant management with Claude AI",
-          "slug": "claude-ha-agent",
-          "target": "claude-ha-agent",
-          "version": "1.0.0",
-          "image": "homeassistant/amd64-base:latest"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "name": "Claude HA Agent",
+    "url": "https://github.com/and-eee/Claude-HA-Agent",
+    "maintainer": "and-eee"
+  }
+]
