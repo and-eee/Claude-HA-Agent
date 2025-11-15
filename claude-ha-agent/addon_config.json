@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "slug": "claude-ha-agent",
   "description": "AI-powered conversational Home Assistant management",
-  "build": {},
+  "build": true,
+  "image": "ghcr.io/home-assistant/{arch}-base:latest",
   "arch": [
     "amd64",
     "armv7",
