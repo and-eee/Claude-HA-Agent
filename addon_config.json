@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "slug": "claude-ha-agent",
   "description": "AI-powered conversational Home Assistant management",
-  "image": "ghcr.io/your-org/claude-ha-agent:{arch}",
+  "image": "ghcr.io/and-eee/claude-ha-agent:{arch}",
   "arch": ["amd64", "armv7", "aarch64"],
   "ports": {
     "5000/tcp": 5000
