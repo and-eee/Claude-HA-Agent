@@ -4,11 +4,8 @@
   "slug": "claude-ha-agent",
   "description": "AI-powered conversational Home Assistant management",
   "build": true,
-  "image": "ghcr.io/home-assistant/{arch}-base:latest",
   "arch": [
-    "amd64",
-    "armv7",
-    "aarch64"
+    "amd64"
   ],
   "ports": {
     "5000/tcp": 5000
