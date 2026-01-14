@@ -11,6 +11,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy application code
 COPY app/ ./app/
 
+# Copy static files (screensaver)
+COPY static/ ./static/
+
 # Expose port
 EXPOSE 5000
 
