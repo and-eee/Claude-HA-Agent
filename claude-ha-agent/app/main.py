@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 from app.config import config
 from app.db.database import Database
@@ -146,15 +147,9 @@ async def health():
     return {"status": "ok", "startup_complete": _startup_complete}
 
 
-# Root endpoint
-@app.get("/")
-async def root():
-    """Root endpoint."""
-    return {
-        "name": "Claude HA Agent",
-        "version": "1.0.0",
-        "status": "running" if _startup_complete else "starting",
-    }
+# Mount static files (screensaver) at root - MUST be after all other routes
+# This serves static/index.html at the root URL
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
 
 if __name__ == "__main__":
